@@ -13,13 +13,17 @@ public class Mahasiswa {
         System.out.println("NIM: " + nim + " | Nama: " + nama + " | Prodi: " + prodi);
     }
 
-    void sequentialSearching(Mahasiswa[] mahasiswa, String nim){
-        System.out.print("Masukkan NIM Mahasiswa yang dicari: ");
-        String cari = input.nextLine();
-            for (int i = 0; i < mahasiswa.length; i++) {
-                if (mhs[i].nim.equalsIgnoreCase(cari)) {
-                    mhs[i].tampilMahasiswa();
-                }
+    static void sequentialSearching(Mahasiswa[] mahasiswa, String cari){
+        boolean ditemukan = false;
+        for (int i = 0; i < mahasiswa.length; i++) {
+            if (mahasiswa[i].nim.equalsIgnoreCase(cari)) {
+                mahasiswa[i].tampilMahasiswa();
+                ditemukan = true;
+                break;
             }
+        }
+        if (!ditemukan) {
+            System.out.println("Mahasiswa dengan NIM " + cari + " tidak ditemukan.");
+        }
     }
 }
