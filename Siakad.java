@@ -54,15 +54,7 @@ public class Siakad {
                     }
                     break;
                 case 4:
-                    for (int i = 0; i < nilai.length-1; i++) {
-                        for (int j = 1; j < nilai.length-i; j++) {
-                            if (nilai[j].nilaiAkhir > nilai[j-1].nilaiAkhir) {
-                                Penilaian tmp = nilai[j];
-                                nilai[j] = nilai[j-1];
-                                nilai[j-1] = tmp;
-                            }
-                        }
-                    }
+                    Penilaian.bubbleSort(nilai);
                     for (Penilaian penilaian : nilai) {
                         penilaian.tampilNilai();
                     }

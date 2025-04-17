@@ -23,7 +23,16 @@ class Penilaian {
         System.out.println(mahasiswa.nama + " | " + matakuliah.namaMK + " | Nilai Akhir: " + nilaiAkhir);
     }
 
-    
-
+    static void bubbleSort(Penilaian[] nilai){
+        for (int i = 0; i < nilai.length-1; i++) {
+            for (int j = 1; j < nilai.length-i; j++) {
+                if (nilai[j].nilaiAkhir > nilai[j-1].nilaiAkhir) {
+                    Penilaian tmp = nilai[j];
+                    nilai[j] = nilai[j-1];
+                    nilai[j-1] = tmp;
+                }
+            }
+        }
+    }
 }
 
