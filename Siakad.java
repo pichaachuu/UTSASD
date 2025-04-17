@@ -68,7 +68,13 @@ public class Siakad {
                     }
                     break;
                 case 5:
+<<<<<<< HEAD
                     Mahasiswa.sequentialSearching(mhs);
+=======
+                    System.out.print("Masukkan NIM Mahasiswa yang dicari: ");
+                    String cari = input.nextLine();
+                    Mahasiswa.sequentialSearching(mhs, cari);
+>>>>>>> daeba095c4ce1b17f96b4fcf561faf454f2d5249
                     break;
             }
         } while (pilih != 0);
