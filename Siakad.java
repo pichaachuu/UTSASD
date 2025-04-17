@@ -68,7 +68,7 @@ public class Siakad {
                     }
                     break;
                 case 5:
-                    Mahasiswa.sequentialSearching(dataMHS);
+                    Mahasiswa.sequentialSearching(mhs);
                     break;
             }
         } while (pilih != 0);
