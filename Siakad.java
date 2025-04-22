@@ -12,12 +12,9 @@ public class Siakad {
             new Mahasiswa("22005", "Pica", "Sistem Informasi Bisnis")
         };
 
-        MataKuliah[] mk = {
-            new MataKuliah("MK001", "Struktur Data", 3, "Bu Triana"),
-            new MataKuliah("MK002", "Basis Data", 3, "Bu Triana"),
-            new MataKuliah("MK003", "Desain Web", 3, "Bu Triana")
-            //tambah dosen
-        };
+        MataKuliah[] mk = new MataKuliah[100];
+        int jumlahMK = 0;
+
 
         Penilaian[] nilai = {
             new Penilaian(mhs[0], mk[0], 80, 85, 90),
@@ -39,6 +36,7 @@ public class Siakad {
             System.out.println("4. Urutkan Mahasiswa Berdasarkan Nilai Akhir (DSC)");
             System.out.println("5. Cari Mahasiswa Berdasarkan NIM");
             System.out.println("6. Urutkan Mahasiswa Berdasarkan Nilai Akhir (ASC)");
+            System.out.println("7. Input Mata Kuliah");
             System.out.println("0. Keluar");
             System.out.print("Pilih Menu: ");
             pilih = input.nextInt();
@@ -51,8 +49,8 @@ public class Siakad {
                     }
                     break;
                 case 2:
-                    for (MataKuliah dataMK : mk) {
-                        dataMK.tampilMataKuliah();
+                    for (int i = 0; i < jumlahMK; i++) {
+                        mk[i].tampilMataKuliah();
                     }
                     break;
                 case 3:
@@ -78,6 +76,10 @@ public class Siakad {
                     for (Penilaian penilaian : nilai) {
                         penilaian.tampilNilai();
                     }
+                    break;
+                case 7:
+                    mk[jumlahMK] = MataKuliah.tambahMataKuliah(input);
+                    jumlahMK++;
                     break;
             }
         } while (pilih != 0);
