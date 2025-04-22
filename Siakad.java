@@ -13,7 +13,10 @@ public class Siakad {
         };
 
         MataKuliah[] mk = new MataKuliah[100];
-        int jumlahMK = 0;
+            mk[0] = new MataKuliah("IF101", "Algoritma", 3, "Dr. Yudi");
+            mk[1] = new MataKuliah("IF102", "Struktur Data", 3, "Bu Rani");
+            mk[2] = new MataKuliah("SI101", "Sistem Informasi", 3, "Pak Budi");
+        int jumlahMK = 3;
 
 
         Penilaian[] nilai = {
@@ -73,6 +76,7 @@ public class Siakad {
                 case 6:
                     System.out.println("Pengurutan Insertion Sort");
                     Penilaian.insertionSort(nilai);
+                    System.out.println("Nilai Mahasiswa Setelah Diurutkan:");
                     for (Penilaian penilaian : nilai) {
                         penilaian.tampilNilai();
                     }
