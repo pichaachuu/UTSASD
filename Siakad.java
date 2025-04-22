@@ -36,8 +36,9 @@ public class Siakad {
             System.out.println("1. Tampilkan Daftar Mahasiswa");
             System.out.println("2. Tampilkan Daftar Mata Kuliah");
             System.out.println("3. Tampilkan Data Penilaian");
-            System.out.println("4. Urutkan Mahasiswa Berdasarkan Nilai Akhir");
+            System.out.println("4. Urutkan Mahasiswa Berdasarkan Nilai Akhir (DSC)");
             System.out.println("5. Cari Mahasiswa Berdasarkan NIM");
+            System.out.println("6. Urutkan Mahasiswa Berdasarkan Nilai Akhir (ASC)");
             System.out.println("0. Keluar");
             System.out.print("Pilih Menu: ");
             pilih = input.nextInt();
@@ -60,6 +61,7 @@ public class Siakad {
                     }
                     break;
                 case 4:
+                    System.out.println("Pengurutan Bubble Sort");
                     Penilaian.bubbleSort(nilai);
                     for (Penilaian penilaian : nilai) {
                         penilaian.tampilNilai();
@@ -69,6 +71,13 @@ public class Siakad {
                     System.out.print("Masukkan NIM Mahasiswa yang dicari: ");
                     String cari = input.nextLine();
                     Mahasiswa.sequentialSearching(mhs, cari);
+                    break;
+                case 6:
+                    System.out.println("Pengurutan Insertion Sort");
+                    Penilaian.insertionSort(nilai);
+                    for (Penilaian penilaian : nilai) {
+                        penilaian.tampilNilai();
+                    }
                     break;
             }
         } while (pilih != 0);

@@ -34,5 +34,17 @@ class Penilaian {
             }
         }
     }
+
+    static void insertionSort(Penilaian[] nilai){
+        for (int i = 1; i < nilai.length; i++) {
+            Penilaian temp = nilai[i];
+            int j = i;
+            while (j > 0 && nilai[j-1].nilaiAkhir > temp.nilaiAkhir) {
+                nilai[j] = nilai[j-1];
+                j--;
+            }
+            nilai[j] = temp;
+        }
+    }
 }
 
